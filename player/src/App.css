@@ -1,0 +1,27 @@
+.App {
+  text-align: center;
+  display:flex;
+  justify-content: center;
+}
+
+.main{
+  height:1020px;
+  width:575px;
+  background-color:#1b1b1b;
+}
+
+
+.meta{
+  text-align:center;
+}
+
+.meta .title{
+  font-size:36px;
+  color:#0fd65a;
+  text-transform:capitalize;
+}
+.meta .author{
+  font-size:18px;
+  color:#4c4c4c;
+  text-transform:uppercase;
+}
