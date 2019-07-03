@@ -10,6 +10,14 @@ class UpperMenu extends React.Component{
 				<button className="arrowButton">
 					<img src={backIco} />
 				</button>
+				<div>
+					<span>Album</span>
+
+					<span>Unreleased</span>
+				</div>
+				<button className="arrowButton">
+					<img src={backIco} />
+				</button>
 			</div>
 		)
 	}
