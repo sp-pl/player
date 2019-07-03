@@ -3,11 +3,20 @@
   display:flex;
   justify-content: center;
 }
+.d-flex{
+  display:flex;
+}
+button{
+  background-color:transparent;
+  border:none;
+}
 
 .main{
   height:1020px;
   width:575px;
   background-color:#1b1b1b;
+  overflow-y:hidden;
+  position:relative;
 }
 
 
@@ -24,4 +33,27 @@
   font-size:18px;
   color:#4c4c4c;
   text-transform:uppercase;
+}
+
+.tunes-transition{
+  top:90px !important;
+  transition:top 1s ;
+}
+.tunes{
+  background-color:white;
+  height:auto;
+  position:absolute;
+  left:0;
+  top:calc(100% - 90px);
+  right:0;
+  overflow:hidden;
+  transition:top 1s;
+}
+
+.tunes .next{
+  height:90px;
+}
+
+.tunes .next .action{
+  width:90px;
 }

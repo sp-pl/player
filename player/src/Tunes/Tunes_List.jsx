@@ -6,8 +6,19 @@ class TunesList extends React.Component{
 	constructor(props){
 		super(props)
 		this.state = {
-			isShow: false
+			isActionClicked : false
 		}
+	}
+
+	hideTunesList(){
+		const tunes = document.querySelector('.tunes')
+		const next = document.querySelector('.next')
+
+		tunes.classList.remove('tunes-transition')
+		
+		setTimeout(function(){
+			next.style.display = "flex"
+		},1000)
 	}
 
 
@@ -15,7 +26,9 @@ class TunesList extends React.Component{
 		return(
 
 			<div className="tunes">
+			
 				<Next />
+				
 				<ul className="tunesList">
 					<li>
 						<span>1.</span>
@@ -27,7 +40,12 @@ class TunesList extends React.Component{
 					<button>
 						shuffle play
 					</button>
-					<
+					<button 
+						clasName="hide"
+						onClick={() => {this.hideTunesList()}}>
+						bottom
+					</button>
+					
 				</div>
 			</div>
 
@@ -35,3 +53,5 @@ class TunesList extends React.Component{
 	}
 }
 
+
+export default TunesList
