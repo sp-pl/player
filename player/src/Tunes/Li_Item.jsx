@@ -10,9 +10,9 @@ class LiItem extends React.Component{
 
 	render(){
 		return(
-			<li>
-				<span>{this.props.data.id}</span>
-				<h3>
+			<li class="d-flex">
+				<span class="counter">{this.props.data.id}</span>
+				<h3 class="title">
 					<span>
 						{this.props.data.name}
 					</span>

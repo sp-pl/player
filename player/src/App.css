@@ -6,9 +6,13 @@
 .d-flex{
   display:flex;
 }
+.d-flex-column{
+  flex-direction:column;
+}
 button{
   background-color:transparent;
   border:none;
+  cursor:pointer;
 }
 
 .main{
@@ -19,7 +23,27 @@ button{
   position:relative;
 }
 
+.main .bg-image{
+  width:100%;
+  height:300px;
+  background-size:cover;
+  background-repeat:no-repeat;
+  background-size:117% auto;
+  background-position:-56px -20px;
+  position:absolute;
+}
+.main .bg-image:before{
+  content:' ';
+  display:block;
+  position:absolute;
+  left:0;
+  right:0;
+  height:300px;
 
+}
+.main .bg-image .layer{
+
+}
 .meta{
   text-align:center;
 }
@@ -37,11 +61,15 @@ button{
 
 .tunes-transition{
   top:130px !important;
+  bottom:0;
+  padding:60px;
+  z-index:3;
   transition:top 1s ;
 }
 .tunes{
   background-color:white;
   height:auto;
+  max-height:100%;
   position:absolute;
   left:0;
   top:calc(100% - 90px);
@@ -50,10 +78,56 @@ button{
   transition:top 1s;
 }
 
+
 .tunes .next{
   height:90px;
 }
 
 .tunes .next .action{
   width:90px;
+}
+.tunes .tunesList{
+  margin:0;
+  padding:0;
+  position:relative;
+  overflow:scroll;
+}
+.tunes .tunesList .counter{
+  margin-right:20px;
+}
+.tunes .tunesList .title{
+  font-family:'Source Sans Pro';
+  font-weight:normal;
+  font-size:24px;
+  margin:0 10px 0 0;
+  text-align:left;
+  width:100%;
+  background-image: linear-gradient(to right, #333 10%, rgba(255, 255, 255, 0) 0%);
+  background-position: bottom;
+  background-size: 10px 1px;
+  background-repeat: repeat-x;
+}
+.tunes .tunesList .title span{
+  display:inline-block;
+  padding-right:10px;
+  background-color:white;
+}
+.tunes .options{
+  position:absolute;
+  left:0;
+  right:0;
+  bottom:0;
+  height:165px;
+  padding:0 60px 0 60px;
+  background-color:white;
+}
+.tunes .options .shuffle{
+  background-color:#0fd65a;
+  color:white;
+  text-transform:uppercase;
+  font-size:20px;
+  font-family:'Source Sans Pro'; 
+  height:60px;
+  margin-top:30px;
+  border-radius:50px; 
 }

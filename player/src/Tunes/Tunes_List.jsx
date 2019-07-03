@@ -45,27 +45,25 @@ class TunesList extends React.Component{
 		return(
 
 			<div className="tunes">
-			
-				<Next />
-				
-				<ul className="tunesList">
-					{songsList.map((data) => {
-						return <LiItem data={data} />
-					})
-
-					}
-				</ul>
-				<div className="options">
-					<button>
-						shuffle play
-					</button>
-					<button 
-						clasName="hide"
-						onClick={() => {this.hideTunesList()}}>
-						bottom
-					</button>
+					<Next />
 					
-				</div>
+					<ul className="tunesList">
+						{songsList.map((data) => {
+							return <LiItem data={data} />
+						})
+						}
+					</ul>
+					<div className="options d-flex d-flex-column">
+						<button className="shuffle">
+							shuffle play
+						</button>
+						<button 
+							clasName="hide"
+							onClick={() => {this.hideTunesList()}}>
+							bottom
+						</button>
+						
+					</div>
 			</div>
 
 		)
