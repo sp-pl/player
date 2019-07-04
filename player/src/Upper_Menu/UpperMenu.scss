@@ -1,0 +1,16 @@
+.upperMenu{
+	position:relative;
+	z-index:2;
+
+	.button{
+		width:100px;
+		height:130px;
+		position:relative;
+		z-index:3;
+
+		.arrow-left, .more-icon{
+			width:30px;
+			height:30px;
+		}
+	}
+}

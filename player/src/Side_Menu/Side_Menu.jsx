@@ -1,11 +1,13 @@
 import React from 'react'
 
+import Meta from '../Meta/Meta.jsx'
 
-class SideMenu extends ReactComponent{
+class SideMenu extends React.Component{
 
 	render(){
 		return(
 			<div className="sideMenu">
+				<Meta />
 				<div className="dots">
 
 				</div>
@@ -18,3 +20,5 @@ class SideMenu extends ReactComponent{
 
 
 }
+
+export default SideMenu;
