@@ -1,0 +1,26 @@
+
+@import './Main/Main.scss';
+@import './Meta/Meta.scss';
+@import './Tunes/Tunes.scss';
+
+
+.App {
+  text-align: center;
+  display:flex;
+  justify-content: center;
+}
+.d-flex{
+  display:flex;
+}
+.d-flex-column{
+  flex-direction:column;
+}
+
+button{
+  background-color:transparent;
+  border:none;
+  cursor:pointer;
+}
+
+
+
