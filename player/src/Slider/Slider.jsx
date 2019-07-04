@@ -14,27 +14,35 @@ class CoverSlider extends React.Component{
 
 	render(){
 		const settings = {
-      className: "center",
-      centerMode: true,
-      infinite: true,
-      centerPadding: 0,
-      slidesToShow: 2,
-      speed: 500,
-      controls: true
-    };
+			className: " ",
+			centerMode: true,
+			infinite: true,
+			centerPadding: "128px",
+			slidesToShow: 1,
+			controls: true
+		};
 		return(
-			<div>
-			<Slider {...settings}>
-			<div>
-				<img className="" src={firstCover} />
-			</div>
-			<div>	
-				<img className="" src={secondCover} />
-			</div>
-			<div>	
-				<img className="" src={thirdCover} />
-			</div>
-			</Slider>
+			<div class="slider">
+				<Slider {...settings}>
+					<div>
+						<img className="" src={firstCover} />
+					</div>
+					<div>	
+						<img className="" src={secondCover} />
+					</div>
+					<div>	
+						<img className="" src={thirdCover} />
+					</div>
+					<div>
+						<img className="" src={firstCover} />
+					</div>
+					<div>	
+						<img className="" src={secondCover} />
+					</div>
+					<div>	
+						<img className="" src={thirdCover} />
+					</div>
+				</Slider>
 			</div>
 		)
 	}
