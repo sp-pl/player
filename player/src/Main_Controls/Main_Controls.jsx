@@ -43,7 +43,7 @@ class MainControls extends React.Component{
 
 	render(){
 		return(
-			<div className="mainControls">
+			<div className="mainControls d-flex">
 				<button><img src={shuffleIco} alt="" /></button>
 				<button><img src={previousIco} alt="" /></button>
 				<button>

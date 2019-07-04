@@ -17,7 +17,7 @@ class CoverSlider extends React.Component{
 			className: " ",
 			centerMode: true,
 			infinite: true,
-			centerPadding: "128px",
+			centerPadding: "127.5px",
 			slidesToShow: 1,
 			controls: true
 		};
@@ -33,15 +33,7 @@ class CoverSlider extends React.Component{
 					<div>	
 						<img className="" src={thirdCover} />
 					</div>
-					<div>
-						<img className="" src={firstCover} />
-					</div>
-					<div>	
-						<img className="" src={secondCover} />
-					</div>
-					<div>	
-						<img className="" src={thirdCover} />
-					</div>
+					
 				</Slider>
 			</div>
 		)

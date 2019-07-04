@@ -29,6 +29,15 @@ class UpperMenu extends React.Component{
 		}else{
 			sideMenu.classList.remove('sideMenu-transition')
 		}
+
+		//show current cover in sideMenu
+
+		let currentCover = document.querySelector('.slider .slick-current img')
+		const currentCoverSideMenu = document.querySelector('.sideMenu .current img')
+
+		currentCoverSideMenu.src = currentCover.src
+
+
 	};
 	render(){
 		return(
@@ -44,7 +53,7 @@ class UpperMenu extends React.Component{
 				<button 
 					className="button sideMenu-button"
 					onClick={this.showSideMenuClicked}>
-					<img className="more-icon" src={this.state.sideMenuActive ? moreIco : 'dupa'} />
+					<img className="more-icon" src={this.state.sideMenuActive ? 'xxx' : moreIco} />
 				</button>
 				
 			</div>
