@@ -44,7 +44,7 @@ class UpperMenu extends React.Component{
 				<button 
 					className="button sideMenu-button"
 					onClick={this.showSideMenuClicked}>
-					<img className="more-icon" src={moreIco} />
+					<img className="more-icon" src={this.state.sideMenuActive ? moreIco : 'dupa'} />
 				</button>
 				<SideMenu />
 			</div>
