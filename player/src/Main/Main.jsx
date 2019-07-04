@@ -5,6 +5,7 @@ import Slider from '../Slider/Slider.jsx'
 import Meta from '../Meta/Meta.jsx'
 import MainControls from '../Main_Controls/Main_Controls.jsx'
 import TunesList from '../Tunes/Tunes_List.jsx'
+import SideMenu from '../Side_Menu/Side_Menu.jsx'
 
 class Main extends React.Component{
 
@@ -18,6 +19,7 @@ class Main extends React.Component{
 				<Meta />
 				<MainControls />
 				<TunesList />
+				<SideMenu />
 				
 
 			</div>

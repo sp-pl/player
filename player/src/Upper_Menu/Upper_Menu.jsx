@@ -1,10 +1,9 @@
 import React from 'react';
 
 
-import backIco from '../assets/img/back.svg'
+import backIco from '../assets/img/back_ico.svg'
 import moreIco from '../assets/img/more_ico.svg'
 
-import SideMenu from '../Side_Menu/Side_Menu.jsx'
 
 class UpperMenu extends React.Component{
 
@@ -16,9 +15,10 @@ class UpperMenu extends React.Component{
 	}
 
 	showSideMenuClicked = () => {
+		const upperMenu = document.querySelector('.upperMenu')
 		const sideMenuButton = document.querySelector('.upperMenu .button.sideMenu-button');
 		const sideMenuButtonImg = document.querySelector('.upperMenu .button.sideMenu-button img');
-		const sideMenu = document.querySelector('.upperMenu .sideMenu');
+		const sideMenu = document.querySelector('.sideMenu');
 
 		this.setState({
 			sideMenuActive: !this.state.sideMenuActive
@@ -46,7 +46,7 @@ class UpperMenu extends React.Component{
 					onClick={this.showSideMenuClicked}>
 					<img className="more-icon" src={this.state.sideMenuActive ? moreIco : 'dupa'} />
 				</button>
-				<SideMenu />
+				
 			</div>
 		)
 	}
