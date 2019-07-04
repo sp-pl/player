@@ -1,20 +1,40 @@
 import React from 'react'
 
-import Jquery from 'jquery';
+import jQuery from 'jquery'
+import Slider from "react-slick";
+
+
 import firstCover from '../assets/img/cover-1.png';
 import secondCover from '../assets/img/cover.png';
 import thirdCover from '../assets/img/unreleased_cover.png';
 
-class Slider extends React.Component{
+class CoverSlider extends React.Component{
 
 
 
 	render(){
+		const settings = {
+      className: "center",
+      centerMode: true,
+      infinite: true,
+      centerPadding: 0,
+      slidesToShow: 2,
+      speed: 500,
+      controls: true
+    };
 		return(
-			<div className="slider">
+			<div>
+			<Slider {...settings}>
+			<div>
 				<img className="" src={firstCover} />
+			</div>
+			<div>	
 				<img className="" src={secondCover} />
+			</div>
+			<div>	
 				<img className="" src={thirdCover} />
+			</div>
+			</Slider>
 			</div>
 		)
 	}
@@ -24,4 +44,4 @@ class Slider extends React.Component{
 }
 
 
-export default Slider
+export default CoverSlider

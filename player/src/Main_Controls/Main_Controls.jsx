@@ -9,13 +9,50 @@ import playActiveIco from '../assets/img/Play_active.png'
 
 class MainControls extends React.Component{
 
+	constructor(props){
+		super(props)
+		this.state = {
+			isPlayActive: false
+		}
+	}
+
+	play = () => {
+		
+		const playImg = document.querySelector('.mainControls .play-button')
+
+		this.setState({
+			isPlayActive : !this.state.isPlayActive
+		})
+
+		if(this.state.isPlayActive == false){
+			playImg.classList.add('play-active')
+			playImg.classList.remove('play-inactive')
+			playImg.src=playActiveIco
+		}else{
+			playImg.classList.remove('play-active')
+			playImg.classList.add('play-inactive')
+			playImg.src=playInactiveIco
+		}
+		
+
+	}
+
+	componentDidUpdate(){
+		
+	}
 
 	render(){
 		return(
 			<div className="mainControls">
 				<button><img src={shuffleIco} alt="" /></button>
 				<button><img src={previousIco} alt="" /></button>
-				<button><img src={playActiveIco} alt="" /></button>
+				<button>
+					<img 
+						src={playInactiveIco} 
+						alt=""
+						className="play-button play-inactive" 
+						onClick={this.play}/>
+				</button>
 				<button><img src={nextIco} alt="" /></button>
 				<button><img src={repeatIco} alt="" /></button>
 			</div>
