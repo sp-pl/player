@@ -20,9 +20,9 @@ class SideMenu extends React.Component{
 
 				</div>
 				<div className="more d-flex d-flex-column">
-					<button>Add to playlist</button>
-					<button>Show album</button>
-					<button>Share with friends</button>
+					<button className="option">Add to playlist</button>
+					<button className="option">Show album</button>
+					<button	className="option">Share with friends</button>
 				</div>	
 			</div>
 		)

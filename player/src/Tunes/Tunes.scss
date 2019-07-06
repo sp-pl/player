@@ -5,6 +5,9 @@
 	z-index:3;
 	transition:top 1s ;
 }
+.tunes-transition-before-end{
+	padding:60px;
+}
 
 .tunes{
 	background-color:white;
@@ -24,34 +27,65 @@
 			width:90px;
 		}
 	}
-	.tunesList{
-		margin:0;
-		padding:0;
+	.tunesList-container{
 		position:relative;
-		overflow:scroll;
+		width:100%;
+		overflow:hidden;
 
-		.counter{
-			margin-right:20px;
-		}
-		.title{
-			font-family:'Source Sans Pro';
-			font-weight:normal;
-			font-size:24px;
-			margin:0 10px 0 0;
-			text-align:left;
-			width:100%;
-			background-image: linear-gradient(to right, #333 10%, rgba(255, 255, 255, 0) 0%);
-			background-position: bottom;
-			background-size: 10px 1px;
-			background-repeat: repeat-x;
+		.tunesList{
+			height:680px;
+			width:calc(100% + 18px);
+			margin:0;
+			padding:0;
+
+			overflow-y:scroll;
+			overflow-x:hidden;
 			
-			span{
-				display:inline-block;
-				padding-right:10px;
-				background-color:white;
+			li{
+				line-height:1;
+				margin-bottom:40px;
+				font-size:24px;
+				font-family:'Source Sans Pro';
+				
+				&:last-child{
+					margin-bottom:200px;
+				}
+				.counter{
+					display:inline-block;
+					width:38px;
+					font-size:18px;
+					color:#9a9b9b;
+				}
+				.title{
+					font-weight:normal;
+					margin:0 10px 0 0;
+					text-align:left;
+					width:100%;
+					background-image: linear-gradient(to right, #333 10%, rgba(255, 255, 255, 0) 0%);
+					background-position: bottom;
+					background-size: 10px 1px;
+					background-repeat: repeat-x;
+					
+					.title-span{
+						display:inline-block;
+						padding-right:10px;
+						background-color:white;
+						position:relative;
+						bottom:-3px;
+					}
+				}
+				.time{
+					display:flex;
+					align-items:flex-end;
+					position:relative;
+					bottom:-3px;
+					color:#9a9b9b;
+				}
+
 			}
+			
 		}
-	}
+	}	
 	.options{
 		position:absolute;
 		left:0;
@@ -60,6 +94,7 @@
 		height:165px;
 		padding:0 60px 0 60px;
 		background-color:white;
+		box-shadow:0 0 300px white,0 0 300px white,0 0 300px white, 0 0 300px white,0 0 300px white,0 0 300px white,0 0 300px white;
 
 		.shuffle{
 			background-color:#0fd65a;
@@ -70,6 +105,14 @@
 			height:60px;
 			margin-top:30px;
 			border-radius:50px; 
+		}
+		.hide{
+			margin-top:30px;
+			
+			img{
+				height:16px;
+				width:32px;
+			}
 		}
 	}
 }

@@ -25,7 +25,46 @@
 						justify-content: center;
 						align-items:center;
 					}
+
+					&:before{
+						content: ' ';
+						width:69px;
+						height:69px;
+						border:3px solid #0fd65a;
+						background:black;
+						border-radius:100%;
+						position: absolute;
+					    top: 50%;
+					    left: 50%;
+					    transform: translate(-50%, -50%);
+					    opacity:0;
+					}
+					&:after{
+						content: ' ';
+						width:29px;
+						height:35px;
+						position: absolute;
+					    top: 50%;
+					    left: 50%;
+					    transform: translate(-50%, -50%);
+					    opacity:0;
+					}
 				}
+				.slick-active{
+					position:relative;
+				}
+				.slick-slide.slick-active{
+
+					&:before{
+						opacity:1;
+						transition:opacity .7s ease;
+					}
+					&:after{
+						opacity:1;
+						transition:opacity 1s ease;
+					}
+				}
+				
 			}
 		
 			

@@ -1,8 +1,10 @@
 import React from 'react';
 
+import MissingIco from './missingIcoComponent.jsx'
 
 import backIco from '../assets/img/back_ico.svg'
 import moreIco from '../assets/img/more_ico.svg'
+
 
 
 class UpperMenu extends React.Component{
@@ -45,15 +47,16 @@ class UpperMenu extends React.Component{
 				<button className="button">
 					<img className="arrow-left" src={backIco} />
 				</button>
-				<div>
-					<span>Album</span>
-
-					<span>Unreleased</span>
+				<div className="meta d-flex d-flex-column">
+					<span className="album">Album</span>
+					<span className="isReleased">Unreleased</span>
 				</div>
 				<button 
 					className="button sideMenu-button"
 					onClick={this.showSideMenuClicked}>
-					<img className="more-icon" src={this.state.sideMenuActive ? 'xxx' : moreIco} />
+					{this.state.sideMenuActive ? <MissingIco /> : <img className="more-icon" src={moreIco} />} 
+
+					
 				</button>
 				
 			</div>

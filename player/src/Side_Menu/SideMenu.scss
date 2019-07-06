@@ -1,23 +1,35 @@
+
 .sideMenu-transition{
 	left:0;
-	top:0;
 	right:0 !important;
-	height:935px;
+	height:935px !important;
 	transition:all 1s ease;
 }
 
 .sideMenu{
 	position:absolute;
 	right:-100%;
+	top:0;
 	background-color:rgba(27,27,27, .95);
 	padding-top:220px;
 	box-sizing:border-box;
+	transition:all 1s ease;
 
 	.current{
 
 		img{
 			width:200px;
 			height:200px;
+		}
+	}
+	.more{
+
+		.option{
+			font-family:'Open Sans Pro' sans-serif;
+			font-size:24px;
+			color:white;
+			line-height:1;
+			margin-bottom:40px;
 		}
 	}
 }
