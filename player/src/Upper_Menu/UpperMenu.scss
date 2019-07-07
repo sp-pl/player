@@ -86,8 +86,10 @@
 		img{
 			max-width:100%;
 		}
-		.play-button-img{
-			
+		.play-button-img.play-active{
+			border-radius:100%;
+			box-shadow:0 0 10px rgba(255,255,255,0.2);
+			transition:box-shadow .4s ease;
 		}
 	}
 	

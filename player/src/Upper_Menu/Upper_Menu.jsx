@@ -67,8 +67,6 @@ class UpperMenu extends React.Component{
 					{this.state.sideMenuActive ? <MissingIco /> : <img className="more-icon" src={moreIco} alt=" " />} 
 				</button>
 				}
-				
-				
 			</div>
 		)
 	}

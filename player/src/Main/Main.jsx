@@ -24,7 +24,7 @@ class Main extends React.Component{
 			pausedWidth: 0,
 			playerIntervalId: null,
 			progressCounter: 0,
-			currentProgressWidth:0,
+			currentProgressWidth:0
 		}
 		this.hideTunesList = this.hideTunesList.bind(this)
 		this.showTunesList = this.showTunesList.bind(this)
@@ -60,24 +60,11 @@ class Main extends React.Component{
 	}
 
 	play = () => {
-		
-		const playImg = document.querySelector('.mainControls .play-button-img')
-		const secondPlay = document.querySelector('.upperMenu play-button-img')
 
 		this.setState(prevState => ({
 			isPlayActive : !prevState.isPlayActive
 		}),() => this.startProgressBar(this.state.isPlayActive))
 
-
-		if(this.state.isPlayActive === false){
-			playImg.classList.add('play-active')
-			playImg.classList.remove('play-inactive')
-			playImg.src=playActiveIco
-		}else{
-			playImg.classList.remove('play-active')
-			playImg.classList.add('play-inactive')
-			playImg.src=playInactiveIco
-		}
 	}
 
 	startProgressBar(st){
@@ -149,16 +136,9 @@ class Main extends React.Component{
 					tunesHide={this.hideTunesList}
 					/>
 				<SideMenu />
-				
-
 			</div>
-
 		)
 	}
-
-
-
-
 }
 
 export default Main;

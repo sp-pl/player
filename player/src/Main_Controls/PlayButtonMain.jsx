@@ -13,7 +13,7 @@ class PlayButtonMain extends React.Component{
 					<img 
 						src={this.props.isPlayActive? playActiveIco : playInactiveIco}
 						alt=""
-						className="play-button-img play-inactive" 
+						className={this.props.isPlayActive? "play-button-img play-active" : "play-button-img play-inactive"}
 						/>
 			</button>
 		)
