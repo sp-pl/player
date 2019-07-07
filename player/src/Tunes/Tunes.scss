@@ -2,7 +2,7 @@
 	top:130px !important;
 	bottom:0;
 	padding:60px;
-	z-index:3;
+	z-index:4;
 	transition:top 1s ;
 }
 .tunes-transition-before-end{
@@ -12,6 +12,7 @@
 .tunes{
 	background-color:white;
 	height:auto;
+	padding:40px 60px 65px 65px;
 	max-height:100%;
 	position:absolute;
 	left:0;
@@ -21,10 +22,19 @@
 	transition:top 1s;
 
 	.next{
-		height:90px;
+		position:absolute;
+		z-index:8;
+		left:45px;
+		top:30px;
+		background:white;
 
-		.action{
-			width:90px;
+		.next-text{
+			text-transform:uppercase;
+			font-size:18px;
+			color:#9a9b9b;
+			position:absolute;
+			top:-9px;
+			left:59px;
 		}
 	}
 	.tunesList-container{
@@ -37,7 +47,6 @@
 			width:calc(100% + 18px);
 			margin:0;
 			padding:0;
-
 			overflow-y:scroll;
 			overflow-x:hidden;
 			

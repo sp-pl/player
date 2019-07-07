@@ -16,8 +16,8 @@ class SideMenu extends React.Component{
 					<img src="#" />
 				</div>
 				<Meta />
-				<div className="dots">
-
+				<div className="dots d-flex">
+					<div></div>
 				</div>
 				<div className="more d-flex d-flex-column">
 					<button className="option">Add to playlist</button>

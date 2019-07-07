@@ -1,0 +1,48 @@
+.timer{
+	justify-content: center;
+	align-items:center;
+
+	.time-container{
+		font-family:'Source Sans Pro', sans-serif;
+		font-size:18px;
+		color:#9a9b9b;
+		position:relative;
+		top:-1px;
+
+		.time-from{
+			margin-right:15px;
+		}
+		.time-to{
+			margin-left:15px;
+		}
+	}
+	.progressBar-container{
+		width:380px;
+		height:1px;
+		background-color:black;
+		position:relative;
+
+		&:before{
+			content:' ';
+			display:block;
+			background-color:black;
+			position:absolute;
+			left:0;
+			top:-2px;
+			height:5px;
+			width:5px;
+			border-radius:100%;
+		}
+		&:after{
+			content:' ';
+			display:block;
+			background-color:black;
+			position:absolute;
+			right:0;
+			top:-2px;
+			height:5px;
+			width:5px;
+			border-radius:100%;
+		}
+	}
+}

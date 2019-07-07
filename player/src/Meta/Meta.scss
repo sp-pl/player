@@ -1,17 +1,22 @@
-.meta{
+.meta-container{
 	text-align:center;
+	margin-bottom:45px;
 
 	.title{
+		margin:0;
+		margin-bottom:10px;
 		font-size:36px;
 		color:#0fd65a;
 		text-transform:capitalize;
-		font-family:'Source Sans Pro';
+		font-family:'Source Sans Pro', sans-serif;
 		font-weight:400;
+		line-height:1;
 
 	}
 	.author{
 		font-size:18px;
-		color:#4c4c4c;
+		color:#9a9b9b;
 		text-transform:uppercase;
+		line-height:1;
 	}
 }

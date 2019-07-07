@@ -1,7 +1,8 @@
 import React from 'react';
 
+import Meta from '../Meta/Meta.jsx'
+import PlayButton from '../Main_Controls/PlayButton.jsx'
 import MissingIco from './missingIcoComponent.jsx'
-
 import backIco from '../assets/img/back_ico.svg'
 import moreIco from '../assets/img/more_ico.svg'
 
@@ -21,15 +22,18 @@ class UpperMenu extends React.Component{
 		const sideMenuButton = document.querySelector('.upperMenu .button.sideMenu-button');
 		const sideMenuButtonImg = document.querySelector('.upperMenu .button.sideMenu-button img');
 		const sideMenu = document.querySelector('.sideMenu');
+		const upperMenuMeta = document.querySelector('.upperMenu .meta');
 
 		this.setState({
 			sideMenuActive: !this.state.sideMenuActive
 		})
 
 		if(this.state.sideMenuActive != true){
-			sideMenu.classList.add('sideMenu-transition')
+			upperMenuMeta.style.display="none";
+			sideMenu.classList.add('sideMenu-transition');
 		}else{
-			sideMenu.classList.remove('sideMenu-transition')
+			sideMenu.classList.remove('sideMenu-transition');
+			upperMenuMeta.style.display="flex";
 		}
 
 		//show current cover in sideMenu
@@ -47,17 +51,24 @@ class UpperMenu extends React.Component{
 				<button className="button">
 					<img className="arrow-left" src={backIco} />
 				</button>
-				<div className="meta d-flex d-flex-column">
-					<span className="album">Album</span>
-					<span className="isReleased">Unreleased</span>
-				</div>
-				<button 
+				{this.props.isTunes ? 
+					<Meta />
+					:
+					<div className="meta d-flex d-flex-column">
+						<span className="album">Album</span>
+						<span className="isReleased">Unreleased</span>
+					</div> 
+				}
+				{this.props.isTunes ? 
+					<PlayButton />
+					:
+					<button 
 					className="button sideMenu-button"
 					onClick={this.showSideMenuClicked}>
 					{this.state.sideMenuActive ? <MissingIco /> : <img className="more-icon" src={moreIco} />} 
-
-					
 				</button>
+				}
+				
 				
 			</div>
 		)

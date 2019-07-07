@@ -6,7 +6,7 @@ function MissingIco(){
 
 	return(
 		<div className="missingIco d-flex d-flex-column">
-			<span></span>
+			<div></div>
 		</div>
 	)
 }
