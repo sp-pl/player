@@ -4,9 +4,6 @@ import React from 'react';
 
 class LiItem extends React.Component{
 
-	constructor(props){
-		super(props)
-	}
 
 	render(){
 		return(

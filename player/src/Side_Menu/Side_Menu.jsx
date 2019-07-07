@@ -4,16 +4,11 @@ import Meta from '../Meta/Meta.jsx'
 
 class SideMenu extends React.Component{
 
-	showCurrent(){
-		const currentImage = document.querySelector('.slider .slick-current .img');
-
-	}
-
 	render(){
 		return(
 			<div className="sideMenu">
 				<div class="current">
-					<img src="#" />
+					<img src="#" alt="" />
 				</div>
 				<Meta />
 				<div className="dots d-flex">

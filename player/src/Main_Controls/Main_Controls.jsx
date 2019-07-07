@@ -10,11 +10,6 @@ import repeatIco from '../assets/img/repeat_ico.svg'
 
 class MainControls extends React.Component{
 
-	constructor(props){
-		super(props)
-
-	}
-
 	render(){
 		return(
 			<div className="mainControls d-flex">
@@ -28,7 +23,6 @@ class MainControls extends React.Component{
 			</div>
 		)
 	}
-
 }
 
 export default MainControls

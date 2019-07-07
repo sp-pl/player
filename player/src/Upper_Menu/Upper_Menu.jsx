@@ -18,9 +18,6 @@ class UpperMenu extends React.Component{
 	}
 
 	showSideMenuClicked = () => {
-		const upperMenu = document.querySelector('.upperMenu')
-		const sideMenuButton = document.querySelector('.upperMenu .button.sideMenu-button');
-		const sideMenuButtonImg = document.querySelector('.upperMenu .button.sideMenu-button img');
 		const sideMenu = document.querySelector('.sideMenu');
 		const upperMenuMeta = document.querySelector('.upperMenu .meta');
 
@@ -28,7 +25,7 @@ class UpperMenu extends React.Component{
 			sideMenuActive: !this.state.sideMenuActive
 		})
 
-		if(this.state.sideMenuActive != true){
+		if(this.state.sideMenuActive !== true){
 			upperMenuMeta.style.display="none";
 			sideMenu.classList.add('sideMenu-transition');
 		}else{
@@ -49,7 +46,7 @@ class UpperMenu extends React.Component{
 		return(
 			<div className="upperMenu d-flex d-flex-justify-between d-flex-align-items-center">
 				<button className="button">
-					<img className="arrow-left" src={backIco} />
+					<img className="arrow-left" src={backIco} alt="" />
 				</button>
 				{this.props.isTunes ? 
 					<Meta />
@@ -67,7 +64,7 @@ class UpperMenu extends React.Component{
 					<button 
 					className="button sideMenu-button"
 					onClick={this.showSideMenuClicked}>
-					{this.state.sideMenuActive ? <MissingIco /> : <img className="more-icon" src={moreIco} />} 
+					{this.state.sideMenuActive ? <MissingIco /> : <img className="more-icon" src={moreIco} alt=" " />} 
 				</button>
 				}
 				

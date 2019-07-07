@@ -5,13 +5,6 @@ import playActiveIco from '../assets/img/Play_active.png'
 
 class PlayButtonMain extends React.Component{
 
-	constructor(props){
-		super(props)
-	}
-
-
-
-
 	render(){
 		return(
 			<button
@@ -25,8 +18,6 @@ class PlayButtonMain extends React.Component{
 			</button>
 		)
 	}
-
-
 }
 
 export default PlayButtonMain;

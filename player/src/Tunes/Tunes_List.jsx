@@ -8,11 +8,6 @@ import HideIco from '../assets/img/hide_ico.svg'
 
 class TunesList extends React.Component{
 
-
-
-	
-
-
 	render(){
 		return(
 			<div className="tunes">
@@ -20,7 +15,7 @@ class TunesList extends React.Component{
 						<button 
 							className="next-action" 
 							onClick={this.props.tunesShow}>
-							<img className="playList-ico" src={PlaylistIco} />
+							<img className="playList-ico" src={PlaylistIco} alt=""/>
 						</button>
 						<span class="next-text">
 							next

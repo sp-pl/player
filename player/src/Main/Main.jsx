@@ -75,7 +75,7 @@ class Main extends React.Component{
 		}),() => this.startProgressBar(this.state.isPlayActive))
 
 
-		if(this.state.isPlayActive == false){
+		if(this.state.isPlayActive === false){
 			playImg.classList.add('play-active')
 			playImg.classList.remove('play-inactive')
 			playImg.src=playActiveIco
@@ -91,8 +91,7 @@ class Main extends React.Component{
 		const progressBarMain = document.querySelector('.timer .progressBar-main');
 		let innerProgressCounter = 0;
 		let tuneDuration = 261000;
-		let progressBool = st
-		let id = null
+		let progressBool = st;
 		let drawProgressBar = () => {
 
 			this.setState({
@@ -124,7 +123,7 @@ class Main extends React.Component{
 				pausedWidth: this.state.currentProgressWidth
 			})
 		}
-		
+
 		if(progressBool){
 			this.setState({
 				playerIntervalId: setInterval(drawProgressBar,1000)

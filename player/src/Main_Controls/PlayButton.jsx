@@ -5,13 +5,6 @@ import playActiveIco from '../assets/img/Play_active.png'
 
 class PlayButton extends React.Component{
 
-	constructor(props){
-		super(props)
-	}
-
-
-
-
 	render(){
 		return(
 			<button

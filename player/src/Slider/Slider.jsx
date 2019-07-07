@@ -1,8 +1,5 @@
 import React from 'react'
-
-import jQuery from 'jquery'
 import Slider from "react-slick";
-
 
 import firstCover from '../assets/img/cover-1.png';
 import secondCover from '../assets/img/cover.png';
@@ -12,8 +9,6 @@ import DaftLogo from '../assets/img/daft_logo.svg';
 
 
 class CoverSlider extends React.Component{
-
-
 
 	render(){
 		const settings = {
@@ -34,13 +29,13 @@ class CoverSlider extends React.Component{
 				</style>
 				<Slider {...settings}>
 					<div>
-						<img className="" src={firstCover} />
+						<img className="" src={thirdCover} alt=""/>
 					</div>
 					<div>	
-						<img className="" src={secondCover} />
+						<img className="" src={secondCover} alt=""/>
 					</div>
 					<div>	
-						<img className="" src={thirdCover} />
+						<img className="" src={firstCover} alt=""/>
 					</div>
 					
 				</Slider>
