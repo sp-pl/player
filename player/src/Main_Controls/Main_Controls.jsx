@@ -15,12 +15,6 @@ class MainControls extends React.Component{
 
 	}
 
-
-
-	componentDidUpdate(){
-		
-	}
-
 	render(){
 		return(
 			<div className="mainControls d-flex">

@@ -11,9 +11,8 @@ class ProgressBar extends React.Component{
 				<div className="time-container">
 					<span className="time-from">0:00</span>
 				</div>
-				<div
-					className="progressBar-container">
-
+				<div className="progressBar-container">
+					<div className="progressBar-main" ></div>
 				</div>
 				<div className="time-container">
 					<span className="time-to">4:21</span>

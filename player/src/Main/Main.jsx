@@ -19,12 +19,22 @@ class Main extends React.Component{
 		super(props)
 		this.state={
 			isTunesListActive: false,
-			isPlayActive: false
+			isPlayActive: false,
+			isPlayPaused: false,
+			pausedWidth: 0,
+			playerIntervalId: null,
+			progressCounter: 0,
+			currentProgressWidth:0,
+			oneSecProgress: 0,
+			tuneDuration: 26000
 		}
 		this.hideTunesList = this.hideTunesList.bind(this)
 		this.showTunesList = this.showTunesList.bind(this)
 		this.play = this.play.bind(this)
 	}
+	// componentDidUpdate(){
+	// 	this.startProgressBar()
+	// }
 
 	showTunesList(){
 		const tunes = document.querySelector('.tunes')
@@ -60,9 +70,10 @@ class Main extends React.Component{
 		
 		const playImg = document.querySelector('.mainControls .play-button-img')
 
-		this.setState({
-			isPlayActive : !this.state.isPlayActive
-		})
+		this.setState(prevState => ({
+			isPlayActive : !prevState.isPlayActive
+		}),() => this.startProgressBar(this.state.isPlayActive))
+
 
 		if(this.state.isPlayActive == false){
 			playImg.classList.add('play-active')
@@ -73,14 +84,64 @@ class Main extends React.Component{
 			playImg.classList.add('play-inactive')
 			playImg.src=playInactiveIco
 		}
-		console.log(this.state.isPlayActive)
-		
-
 	}
 
-	render(){
+	startProgressBar(st){
+		
+		const progressBarMain = document.querySelector('.timer .progressBar-main');
+		let innerProgressCounter = 0;
+		let tuneDuration = 26100;
+		let progressBool = st
+		let id = null
+		let drawProgressBar = () => {
+
+			this.setState({
+				progressCounter: innerProgressCounter,
+				currentProgressWidth: progressBarMain.offsetWidth / 380 * 100,
+				oneSecProgress: tuneDuration / 10000
+			})
+			
+			if(this.state.currentProgressWidth > 0 && this.state.currentProgressWidth < 100){
+				this.setState({
+					isPlayPaused:true,
+					pausedWidth: this.state.currentProgressWidth
+				})
+			}
+			if(innerProgressCounter >= tuneDuration){
+				clearInterval(this.state.playerIntervalId)
+			}else{
+
+				if(this.state.currentProgressWidth > 0 && this.state.pausedWidth > 0){
+
+					progressBarMain.style.width = this.state.pausedWidth + this.state.oneSecProgress + '%';
+					// this.setState({
+					// 	isPlayPaused:false
+					// })
+				}else{
+					innerProgressCounter = innerProgressCounter + 1000
+					progressBarMain.style.width = (innerProgressCounter / 261) + '%';
+				}
+				
+
+			}
+			 
+		}
+
+		if(progressBool){
+			this.setState({
+				playerIntervalId: setInterval(drawProgressBar,1000)
+			})
+		}else{
+			clearInterval(this.state.playerIntervalId)
+		}
+		
+	}
+	
+
+	render(){ 
 		return(
-			<div className="main">
+			<div className="main"
+			onClick={this.currentCover}>
 				<BgImage />
 				<UpperMenu 
 					isTunes={this.state.isTunesListActive}
