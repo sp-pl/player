@@ -46,8 +46,12 @@
 		}
 		.progressBar-main{
 			width:0;
-			height:3px;
-			background-color:black;
+			height:5px;
+			position:relative;
+			top:-2px;
+			left:-1px;
+			border-radius:3px;
+			background-color:#2a2a2a;
 		}
 	}
 }
