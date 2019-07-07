@@ -1,6 +1,6 @@
 import React from 'react'
 
-import PlayButton from './PlayButton.jsx';
+import PlayButtonMain from './PlayButtonMain.jsx';
 
 import shuffleIco from '../assets/img/shuffle_ico.svg'
 import previousIco from '../assets/img/previous_ico.svg'
@@ -26,7 +26,9 @@ class MainControls extends React.Component{
 			<div className="mainControls d-flex">
 				<button><img src={shuffleIco} alt="" /></button>
 				<button><img src={previousIco} alt="" /></button>
-				<PlayButton />
+				<PlayButtonMain 
+					playFn={this.props.playFn}
+					isPlayActive={this.props.isPlayActive}/>
 				<button><img src={nextIco} alt="" /></button>
 				<button><img src={repeatIco} alt="" /></button>
 			</div>

@@ -9,16 +9,21 @@ import TunesList from '../Tunes/Tunes_List.jsx'
 import SideMenu from '../Side_Menu/Side_Menu.jsx'
 
 
+import playInactiveIco from '../assets/img/Play_inactive.png'
+import playActiveIco from '../assets/img/Play_active.png'
+
 class Main extends React.Component{
 
 
 	constructor(props){
 		super(props)
 		this.state={
-			isTunesListActive: false
+			isTunesListActive: false,
+			isPlayActive: false
 		}
 		this.hideTunesList = this.hideTunesList.bind(this)
 		this.showTunesList = this.showTunesList.bind(this)
+		this.play = this.play.bind(this)
 	}
 
 	showTunesList(){
@@ -51,15 +56,41 @@ class Main extends React.Component{
 
 	}
 
+	play = () => {
+		
+		const playImg = document.querySelector('.mainControls .play-button-img')
+
+		this.setState({
+			isPlayActive : !this.state.isPlayActive
+		})
+
+		if(this.state.isPlayActive == false){
+			playImg.classList.add('play-active')
+			playImg.classList.remove('play-inactive')
+			playImg.src=playActiveIco
+		}else{
+			playImg.classList.remove('play-active')
+			playImg.classList.add('play-inactive')
+			playImg.src=playInactiveIco
+		}
+		console.log(this.state.isPlayActive)
+		
+
+	}
+
 	render(){
 		return(
 			<div className="main">
 				<BgImage />
 				<UpperMenu 
-					isTunes={this.state.isTunesListActive} />
+					isTunes={this.state.isTunesListActive}
+					playFn={this.play}
+					isPlayActive={this.state.isPlayActive} />
 				<CoverSlider />
 				<Meta />
-				<MainControls />
+				<MainControls
+					playFn={this.play}
+					isPlayActive={this.state.isPlayActive} />
 				<ProgressBar />
 				<TunesList
 					tunesShow={this.showTunesList} 

@@ -60,7 +60,9 @@ class UpperMenu extends React.Component{
 					</div> 
 				}
 				{this.props.isTunes ? 
-					<PlayButton />
+					<PlayButton 
+						playFn={this.props.playFn}
+						isPlayActive={this.props.isPlayActive}/>
 					:
 					<button 
 					className="button sideMenu-button"

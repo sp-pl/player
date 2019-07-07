@@ -3,7 +3,7 @@ import React from 'react';
 import playInactiveIco from '../assets/img/Play_inactive.png'
 import playActiveIco from '../assets/img/Play_active.png'
 
-class PlayButton extends React.Component{
+class PlayButtonMain extends React.Component{
 
 	constructor(props){
 		super(props)
@@ -18,7 +18,7 @@ class PlayButton extends React.Component{
 					className="play-button"
 					onClick={this.props.playFn}>
 					<img 
-						src={this.props.isPlayActive? playActiveIco : playInactiveIco} 
+						src={this.props.isPlayActive? playActiveIco : playInactiveIco}
 						alt=""
 						className="play-button-img play-inactive" 
 						/>
@@ -29,4 +29,4 @@ class PlayButton extends React.Component{
 
 }
 
-export default PlayButton;
+export default PlayButtonMain;
