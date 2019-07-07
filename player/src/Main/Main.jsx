@@ -25,50 +25,44 @@ class Main extends React.Component{
 			playerIntervalId: null,
 			progressCounter: 0,
 			currentProgressWidth:0,
-			oneSecProgress: 0,
-			tuneDuration: 26000
 		}
 		this.hideTunesList = this.hideTunesList.bind(this)
 		this.showTunesList = this.showTunesList.bind(this)
 		this.play = this.play.bind(this)
 	}
-	// componentDidUpdate(){
-	// 	this.startProgressBar()
-	// }
 
 	showTunesList(){
-		const tunes = document.querySelector('.tunes')
-		const next = document.querySelector('.next')
+		const tunes = document.querySelector('.tunes');
+		const next = document.querySelector('.next');
 		
 		this.setState({
 			isTunesListActive: true
 		})
 
 		next.style.display = 'none'
-		tunes.classList.add('tunes-transition')
+		tunes.classList.add('tunes-transition');
 	}
 
 
 	hideTunesList(){
-		const tunes = document.querySelector('.tunes')
-		const next = document.querySelector('.next')
+		const tunes = document.querySelector('.tunes');
+		const next = document.querySelector('.next');
 
 		this.setState({
 			isTunesListActive: false
 		})
 
-		tunes.classList.remove('tunes-transition')
-		tunes.classList.add('tunes-transition-before-end')
+		tunes.classList.remove('tunes-transition');
+		tunes.classList.add('tunes-transition-before-end');
 		setTimeout(function(){
-			tunes.classList.remove('tunes-transition-before-end')
-			next.style.display = "flex"
+			next.style.display="block";
 		},1000)
-
 	}
 
 	play = () => {
 		
 		const playImg = document.querySelector('.mainControls .play-button-img')
+		const secondPlay = document.querySelector('.upperMenu play-button-img')
 
 		this.setState(prevState => ({
 			isPlayActive : !prevState.isPlayActive
