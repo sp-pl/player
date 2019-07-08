@@ -33,7 +33,7 @@ class CoverSlider extends React.Component{
 			slidesToShow: 1,
 			controls: true
 		};
-		console.log(this)
+		
 		const daftLogoCSS = '.slick-active:after{background-image:' + `url('${DaftLogo}')` + '}; background-size:cover; background-repeat:no-repeat;';
 
 		return(
