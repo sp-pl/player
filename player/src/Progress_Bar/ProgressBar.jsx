@@ -9,7 +9,7 @@ class ProgressBar extends React.Component{
 		return(
 			<div className="timer d-flex">
 				<div className="time-container">
-					<span className="time-from">0:00</span>
+					<span className="time-from">{this.props.tuneProgress}</span>
 				</div>
 				<div className="progressBar-container">
 					<div className="progressBar-main" ></div>

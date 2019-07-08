@@ -26,15 +26,13 @@ class Main extends React.Component{
 			pausedWidth: 0,
 			playerIntervalId: null,
 			progressCounter: 0,
-			currentProgressWidth:0
+			currentProgressWidth:0,
+			currentTuneTime:0
 		}
 		this.hideTunesList = this.hideTunesList.bind(this)
 		this.showTunesList = this.showTunesList.bind(this)
-		this.previous = this.previous.bind(this);
 	}
-	previous(){
-			this.slider.slickPrev();
-		}
+
 	showTunesList(){
 		const tunes = document.querySelector('.tunes');
 		const next = document.querySelector('.next');
@@ -96,7 +94,17 @@ class Main extends React.Component{
 				innerProgressCounter = innerProgressCounter + 1000;
 				progressBarMain.style.width = (innerProgressCounter / 2610) + '%';
 			}
+			//convert miliseconds to minutes
+			let minutes = Math.floor(innerProgressCounter / 60000);
+		 	let seconds = ((innerProgressCounter % 60000) / 1000).toFixed(0);
+		  	this.setState({
+		  		currentTuneTime:(minutes + ":" + (seconds < 10 ? '0' : '') + seconds)
+		  	})
 		}
+
+
+
+
 
 		if(this.state.currentProgressWidth > 0 && this.state.currentProgressWidth < 100){
 			this.setState({
@@ -130,7 +138,8 @@ class Main extends React.Component{
 				<MainControls
 					playFn={this.play}
 					isPlayActive={this.state.isPlayActive} />
-				<ProgressBar />
+				<ProgressBar
+				tuneProgress={this.state.currentTuneTime} />
 				<TunesList
 					tunesShow={this.showTunesList} 
 					tunesHide={this.hideTunesList}
