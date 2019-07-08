@@ -1,4 +1,6 @@
 import React from 'react'
+import Slider from "react-slick";
+
 import BgImage from '../Bg_Image/BgImage.jsx'
 import UpperMenu from '../Upper_Menu/Upper_Menu.jsx'
 import CoverSlider from '../Slider/Slider.jsx'
@@ -28,9 +30,11 @@ class Main extends React.Component{
 		}
 		this.hideTunesList = this.hideTunesList.bind(this)
 		this.showTunesList = this.showTunesList.bind(this)
-		this.play = this.play.bind(this)
+		this.previous = this.previous.bind(this);
 	}
-
+	previous(){
+			this.slider.slickPrev();
+		}
 	showTunesList(){
 		const tunes = document.querySelector('.tunes');
 		const next = document.querySelector('.next');
@@ -75,27 +79,23 @@ class Main extends React.Component{
 		let progressBool = st;
 		let drawProgressBar = () => {
 
+			if(innerProgressCounter >= tuneDuration){
+				clearInterval(this.state.playerIntervalId)
+			}
 			this.setState({
 				progressCounter: innerProgressCounter,
 				currentProgressWidth: progressBarMain.offsetWidth / 380 * 100
 			})
 			
-			if(innerProgressCounter >= tuneDuration){
-				clearInterval(this.state.playerIntervalId)
+			if(this.state.isPlayPaused){
+				progressBarMain.style.width = this.state.pausedWidth + 261/380 + '%';
+				this.setState({
+					pausedWidth: this.state.currentProgressWidth
+				})
 			}else{
-
-				if(this.state.isPlayPaused){
-					progressBarMain.style.width = this.state.pausedWidth + 261/380 + '%';
-					this.setState({
-						pausedWidth: this.state.currentProgressWidth
-					})
-				}else{
-					innerProgressCounter = innerProgressCounter + 1000;
-					progressBarMain.style.width = (innerProgressCounter / 2610) + '%';
-				}
+				innerProgressCounter = innerProgressCounter + 1000;
+				progressBarMain.style.width = (innerProgressCounter / 2610) + '%';
 			}
-
-			 
 		}
 
 		if(this.state.currentProgressWidth > 0 && this.state.currentProgressWidth < 100){

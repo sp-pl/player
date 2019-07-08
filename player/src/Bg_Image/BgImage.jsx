@@ -7,9 +7,7 @@ class BgImage extends React.Component{
 	
 	render(){
 		return(
-			<div className="bg-image" style={{backgroundImage: `url(${bgImage})`}}>
-				
-			</div>
+			<div className="bg-image" style={{backgroundImage: `url(${bgImage})`}}></div>
 		)
 	}
 

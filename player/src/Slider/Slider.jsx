@@ -9,6 +9,20 @@ import DaftLogo from '../assets/img/daft_logo.svg';
 
 
 class CoverSlider extends React.Component{
+		
+		constructor(props){
+			super(props);
+			this.slider = React.createRef();
+			this.previous = this.previous.bind(this);
+			this.next = this.next.bind(this);
+		}
+
+		previous(){
+			this.slider.slickPrev();
+		}
+		next(){
+			this.slider.slickNext();
+		}
 
 	render(){
 		const settings = {
@@ -19,15 +33,16 @@ class CoverSlider extends React.Component{
 			slidesToShow: 1,
 			controls: true
 		};
+		console.log(this)
 		const daftLogoCSS = '.slick-active:after{background-image:' + `url('${DaftLogo}')` + '}; background-size:cover; background-repeat:no-repeat;';
 
 		return(
 
-			<div class="slider">
+			<div className="slider">
 				<style>
 					{daftLogoCSS}
 				</style>
-				<Slider {...settings}>
+				<Slider ref={slider => (this.slider = slider)} {...settings}>
 					<div>
 						<img className="" src={thirdCover} alt=""/>
 					</div>
@@ -37,7 +52,6 @@ class CoverSlider extends React.Component{
 					<div>	
 						<img className="" src={firstCover} alt=""/>
 					</div>
-					
 				</Slider>
 			</div>
 		)
@@ -48,4 +62,4 @@ class CoverSlider extends React.Component{
 }
 
 
-export default CoverSlider
+export default CoverSlider;
